@@ -1,44 +1,40 @@
 # Agent-Dev-Tools
 
-A workspace for developing tools for AI agents.
+Reusable agent skills for scaffolding apps and connecting web projects to Vercel.
 
-## Project status
+## Skills
 
-This repository is in its initial setup stage. It currently contains this README; application code, dependencies, and runnable tools have not been added yet. Setup, usage, and test instructions will be documented as implementations are introduced.
+| Skill | Purpose | Entry point |
+| --- | --- | --- |
+| Scaffold App | Generate a SwiftUI iOS app or a React full stack Next.js app | [Scaffolding/scaffold-app/SKILL.md](Scaffolding/scaffold-app/SKILL.md) |
+| Vercel Git Connection | Connect and verify a web app or mobile landing page deployment | [Vercel/SKILL.md](Vercel/SKILL.md) |
 
-## Getting started
+These are repository-hosted skill sources, not automatically installed personal skills. Read the relevant `SKILL.md` and its selected references before using it.
 
-Install Git, then clone the repository:
+## Scaffold an app
+
+Clone this repository, then point the generator at an existing target repository:
 
 ```bash
 git clone https://github.com/pleyva2004/Agent-Dev-Tools.git
 cd Agent-Dev-Tools
+python Scaffolding/scaffold-app/scripts/scaffold.py web --repo /absolute/target-repo
+# Or choose native iOS:
+python Scaffolding/scaffold-app/scripts/scaffold.py mobile --repo /absolute/target-repo --name StarterApp --bundle-id com.example.starterapp
 ```
 
-Review the [issues](https://github.com/pleyva2004/Agent-Dev-Tools/issues) for requested work and project discussions.
+Use Python 3.10+; web generation also needs Node/npm and registry access. Build iOS on macOS with Xcode and XcodeGen. The generator creates `web/` or `mobile/`, refuses existing destinations, and preserves target repository root files. Follow [web verification](Scaffolding/scaffold-app/references/web.md) or [mobile verification](Scaffolding/scaffold-app/references/mobile.md) after generation. Commit generated web lockfiles and never commit secrets or build output.
+
+For Vercel, read [Vercel/SKILL.md](Vercel/SKILL.md). Use the generated `web/` as the deployment Root Directory; native Swift apps require Apple's distribution tooling. Scaffolding alone does not deploy an app.
 
 ## Contributing
 
-1. Choose an existing issue or open one describing the proposed change and expected outcome.
-2. Create a branch from the latest `main`, using a descriptive name based on the issue:
+Follow [instruction.md](instruction.md): read the issue and comments, branch from the latest `main` using `feature/`, `docs/`, or `hotfix/` plus a lowercase issue-title slug, implement and verify, commit, and open a PR with `Closes #<issue-number>`. Merge after required checks pass and preserve the issue branch.
 
-   ```bash
-   git switch main
-   git pull --ff-only origin main
-   git switch -c <issue-name>
-   ```
+Check generator changes with:
 
-3. Make focused changes and update relevant documentation. For code changes, run the applicable checks and document the results.
-4. Commit and push your branch:
+```bash
+python -m unittest discover -s Scaffolding/scaffold-app/scripts/tests -v
+```
 
-   ```bash
-   git add <changed-files>
-   git commit -m "Describe the change"
-   git push -u origin <issue-name>
-   ```
-
-5. Open a pull request targeting `main`. Explain the change, describe validation, and reference the issue with `Closes #<issue-number>` when the work fully resolves it.
-
-## Questions and feedback
-
-Use [GitHub Issues](https://github.com/pleyva2004/Agent-Dev-Tools/issues) to report problems, propose tools, or ask questions. Include relevant context, reproduction steps when applicable, and the expected behavior.
+Use [GitHub Issues](https://github.com/pleyva2004/Agent-Dev-Tools/issues) for problems and proposed tools.

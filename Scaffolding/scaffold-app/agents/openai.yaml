@@ -1,0 +1,4 @@
+interface:
+  display_name: "Scaffold App"
+  short_description: "Scaffold Swift mobile or React full stack apps"
+  default_prompt: "Use $scaffold-app to scaffold this repository for a Swift mobile or React full stack web app."
