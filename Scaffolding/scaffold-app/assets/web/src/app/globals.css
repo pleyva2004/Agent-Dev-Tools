@@ -1,0 +1,5 @@
+:root { color-scheme: light dark; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; }
+.container { max-width: 60rem; margin: 0 auto; padding: 4rem 1.5rem; }
+a { color: inherit; text-underline-offset: 0.2em; }
