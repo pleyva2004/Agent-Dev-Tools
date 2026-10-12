@@ -38,3 +38,7 @@ python -m unittest discover -s Scaffolding/scaffold-app/scripts/tests -v
 ```
 
 Use [GitHub Issues](https://github.com/pleyva2004/Agent-Dev-Tools/issues) for problems and proposed tools.
+
+## Integration test examples
+
+See [TESTING.md](TESTING.md) for the generated SwiftUI app (`mobile/`), its Vercel landing page (`landing/`), and the React full stack demo (`web/`).
