@@ -1,0 +1,4 @@
+interface:
+  display_name: "Vercel"
+  short_description: "Connect web frontends and app landing pages to Vercel"
+  default_prompt: "Use $vercel to connect this repository to Vercel and verify its preview deployment."
