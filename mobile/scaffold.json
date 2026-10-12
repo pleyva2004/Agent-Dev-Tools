@@ -1,0 +1,6 @@
+{
+  "platform": "mobile",
+  "appName": "AgentDevDemo",
+  "bundleId": "com.pleyva.agentdevdemo",
+  "minimumIOS": "17.0"
+}
